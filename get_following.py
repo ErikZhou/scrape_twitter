@@ -8,7 +8,7 @@ def usage():
 def get_following(user):
     cmd = "twint -u " + user + " --following -o data/following.csv --csv"
     print(cmd)
-    if not os.path.exist('data'):
+    if not os.path.exists('data'):
         os.mkdir('data')
 
     returned_value = os.system(cmd)  # returns the exit code in unix
