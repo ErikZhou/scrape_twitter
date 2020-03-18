@@ -6,7 +6,7 @@ def csv_to_txt(filename):
     txt_file = filename +'.txt'
     with open(txt_file, "w") as my_output_file:
         with open(csv_file, "r") as my_input_file:
-            [ my_output_file.write(" ".join(row)+'\n') for row in csv.reader(my_input_file)]
+            [ my_output_file.write(str(" ".join(row))[str(" ".join(row)).find('202'):]+'\n') for row in csv.reader(my_input_file)]
         my_output_file.close()
 
 

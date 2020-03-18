@@ -5,6 +5,7 @@ import read_csv
 import get_tw
 import merge_csv
 import csv_to_txt
+import csv_sort
 
 def usage():
     print('python tw.py user')
@@ -32,11 +33,15 @@ def do(user):
     print(' step 4')
     merge_csv.do()
 
-    # setp 5 csv to txt
+    # setp 5 sort csv
     print(' step 5')
     mergedfile = 'merged.csv'
-    csv_to_txt.csv_to_txt(mergedfile)
+    csv_sort.csv_sort(mergedfile)
 
+    # setp 6 csv to txt
+    print(' step 6')
+    mergedfile = 'merged.csv_.csv'
+    csv_to_txt.csv_to_txt(mergedfile)
 
 
 def main():

@@ -50,6 +50,8 @@ def do():
         f = open(x)
         next(f) # skip the header
         for line in f:
+            # git rid of first 20 char
+            line = line[20:]
             fout.write(line)
         f.close() # not really needed
     fout.close()
