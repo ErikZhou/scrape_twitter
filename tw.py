@@ -1,5 +1,6 @@
 import csv
 import sys
+import os
 import get_following
 import read_csv
 import get_tw
@@ -10,6 +11,13 @@ import csv_sort
 def usage():
     print('python tw.py user')
     print('output csv merged')
+
+
+def run_cmd(cmd): 
+    print(cmd)
+    returned_value = os.system(cmd)  # returns the exit code in unix
+    print('returned value:', returned_value)
+
 
 def do(user):
     # step 1
@@ -42,6 +50,11 @@ def do(user):
     print(' step 6')
     mergedfile = 'merged.csv_.csv'
     csv_to_txt.csv_to_txt(mergedfile)
+
+    # setp 7 delete csv
+    print(' step 7')
+    cmd = 'rm -rf tweets_*.csv'
+    run_cmd(cmd)
 
 
 def main():
